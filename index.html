@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simple Parallax Scrolling Demo</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+<style>
+/*= Reset
+-----------------*/
+*, body {
+	margin: 0;
+	padding: 0;
+}
+*, *:before, *:after {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #333;
+}
+
+/*= Heading
+-----------------*/
+h1, h2 {
+	color: inherit;
+	font-weight: 500;
+	margin: 0 0 30px;
+}
+
+h1 { font-size: 48px; }
+h2 { font-size: 36px; }
+
+p {
+	color: inherit;
+	margin: 0 0 15px;
+}
+
+.container {
+	max-width: 1170px;
+	margin: 0 auto;
+	position: relative;
+}
+.section {
+	padding: 75px;
+	text-align: center;
+	position: relative;
+}
+
+/*= Parallax
+-----------------*/
+.parallax-section:before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+.parallax-section {
+	position: relative;
+	min-height: 55vh;
+	padding: 75px;
+	color:#FFFFFF;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	-webkit-background-size: cover
+}
+.parallax-section-1 {
+	background-image: url(images/nepal-himalay-1.jpg);
+}
+.parallax-section-2 {
+	background-image: url(images/nepal-himalay-2.jpg);
+}
+</style>
+</head>
+<body>
+<div class="parallax-container">
+  <!-- Start Parallax Section-->
+  <div class="section parallax-section parallax-section-1">
+    <div class="container">
+      <h1>Simple Parallax Scrolling Demo</h1>
+      <p>Praesent curae curabitur scelerisque integer ut a orci at ultricies elit id mus adipiscing vitae. Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a. Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a.</p>
+      <p>Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a. Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a. Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a.</p>
+      
+    </div>
+  </div><!--/ End Section-->
+  
+  <!-- Start Section-->
+  <div class="section">
+    <div class="container">
+      <h2>Simple Parallax Scrolling Demo</h2>
+      <p>Praesent curae curabitur scelerisque integer ut a orci at ultricies elit id mus adipiscing vitae. Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a.</p>
+    </div>
+  </div><!--/ End Section-->
+  
+  <!-- Start Parallax Section-->
+  <div class="section parallax-section parallax-section-2">
+    <div class="container">
+      <h1>Simple Parallax Scrolling Demo</h1>
+      <p>Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a. Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a. Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a. Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a.</p>
+      <p>Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a. Pulvinar adipiscing in at netus nascetur malesuada hac mi volutpat tristique fermentum volutpat adipiscing convallis condimentum a ultrices a. Eu molestie torquent praesent scelerisque himenaeos consectetur vestibulum varius nullam lobortis ut ullamcorper nascetur sodales a.</p>
+    </div>
+  </div><!--/ End Section-->
+
+</div><!--/ Parallax-container-->
+
+<!-- jQuery and Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery(window).bind('scroll',function(e){
+			simpleScroll();
+		});   	
+		function simpleScroll(){
+			var scrolledY = jQuery(window).scrollTop();
+			jQuery('.parallax-section').css('background-position','center -'+((scrolledY*0.2))+'px');
+			//*jQuery('.section-element').css('top','-'+((scrolledY*0.5))+'px');*/
+		}   	
+	});
+</script>
+</body>
+</html>
